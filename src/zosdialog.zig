@@ -57,7 +57,7 @@ const FileAction = enum(c_int) {
     save,
 };
 
-const Filters = struct {
+pub const Filters = struct {
     filters: *osdialog_filters,
 
     pub fn init(patterns: [*:0]const u8) Filters {
@@ -123,7 +123,7 @@ test "all" {
     const print = std.debug.print;
     const allocator = std.testing.allocator;
 
-    const callbacks = struct {
+    const Callbacks = struct {
         pub fn save() callconv(.C) ?*anyopaque {
             print("save\n", .{});
             return null;
@@ -135,8 +135,8 @@ test "all" {
         }
     };
 
-    setSaveCallback(callbacks.save);
-    setRestoreCallback(callbacks.restore);
+    setSaveCallback(Callbacks.save);
+    setRestoreCallback(Callbacks.restore);
 
     {
         print("message info\n", .{});
