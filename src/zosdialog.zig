@@ -94,7 +94,7 @@ const osdialog_color = extern struct {
     a: u8 = 0,
 };
 
-const ColorOptions = struct {
+pub const ColorOptions = struct {
     color: Color = Color{},
     opacity: bool = false,
 };
