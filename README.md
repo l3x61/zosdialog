@@ -1,7 +1,8 @@
 # zosdialog
-Zig build package and bindings for [osdialog](https://github.com/AndrewBelt/osdialog) by Andrew Belt.
+Zig build package and bindings for [osdialog](https://github.com/AndrewBelt/osdialog) written by Andrew Belt.
 
-## Use zosdialog
+Tested with `0.14.0-dev.2577+271452d22` on Linux (Wayland/X11) and Windows 11.
+## Installation
 Add the library to your dependencies in `build.zig.zon`.
 ```zig
 .{
@@ -27,4 +28,5 @@ exe.linkLibrary(zosdialog.artifact("zosdialog"));
 b.installArtifact(exe);
 ```
 
-[Example use](example)
+## Usage
+[Example](example)
