@@ -5,7 +5,6 @@ const zosd = @import("zosdialog");
 
 const Callbacks = struct {
     pub fn save() callconv(.C) ?*anyopaque {
-
         print("save\n", .{});
         return null;
     }
@@ -15,6 +14,7 @@ const Callbacks = struct {
         print("restore\n", .{});
     }
 };
+
 pub fn main() !void {
     var gpa_state = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa_state.deinit();
