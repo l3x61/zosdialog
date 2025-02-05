@@ -86,7 +86,7 @@ pub fn file(allocator: Allocator, action: FileAction, options: FileOptions) Allo
 }
 extern fn osdialog_file(action: c_int, path: [*c]const u8, filename: [*c]const u8, filters: ?*osdialog_filters) ?*anyopaque;
 
-const Color = osdialog_color;
+pub const Color = osdialog_color;
 const osdialog_color = extern struct {
     r: u8 = 0,
     g: u8 = 0,
@@ -94,7 +94,7 @@ const osdialog_color = extern struct {
     a: u8 = 0,
 };
 
-pub const ColorOptions = struct {
+const ColorOptions = struct {
     color: Color = Color{},
     opacity: bool = false,
 };
