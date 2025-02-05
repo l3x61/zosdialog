@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) void {
     });
 
     const osd = b.addStaticLibrary(.{
-        .name = "osdialog",
+        .name = "zosdialog",
         .target = target,
         .optimize = optimize,
     });
